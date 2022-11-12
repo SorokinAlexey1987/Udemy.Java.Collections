@@ -48,9 +48,12 @@ public class CarArrayList implements CarList {
     @Override
     public boolean removeAt(int index) {
         checkIndex(index);
+        /*
         for(int i = index; i < size - 1; i++) {
             array[i] = array[i + 1];
         }
+        */
+        System.arraycopy(array, index + 1, array, index, size - 1- index);
         size--;
         return true;
     }

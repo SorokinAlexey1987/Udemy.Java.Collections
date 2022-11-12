@@ -22,9 +22,15 @@ public class CarArrayList implements CarList {
     @Override
     public void add(Car car, int index) {
         increaseArray();
+        /*
         for(int i = size; i > index; i--) {
             array[i] = array[i - 1];
         }
+        */
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException();
+        }
+        System.arraycopy(array, index, array, index + 1, size - index);
         array[index] = car;
         size++;
     }

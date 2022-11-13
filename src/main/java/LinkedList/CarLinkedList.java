@@ -70,7 +70,6 @@ public class CarLinkedList implements CarList {
         } else {
             last = nodePrevious;
         }
-        nodeNext.previous = nodePrevious;
         if (nodePrevious != null) {
             nodePrevious.next = nodeNext;
         } else {

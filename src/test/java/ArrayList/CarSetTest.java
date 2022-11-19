@@ -11,7 +11,7 @@ public class CarSetTest {
 
     @Before
     public void setUp() throws Exception {
-        //init
+        carSet = new CarHashSet();
         for (int i = 0; i < 100; i++) {
             carSet.add(new Car("Brand " + i, i));
         }

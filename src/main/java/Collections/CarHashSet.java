@@ -1,4 +1,4 @@
-package ArrayList;
+package Collections;
 
 public class CarHashSet implements CarSet {
 
@@ -62,6 +62,27 @@ public class CarHashSet implements CarSet {
                 return true;
             } else {
                 secondLast = last;
+                last = last.next;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public boolean contains(Car car) {
+        int position = getElementPosition(car, array.length);
+        if(array[position] == null) {
+            return false;
+        }
+        Entry secondLast = array[position];
+        Entry last = secondLast.next;
+        if (secondLast.value.equals(car)) {
+            return true;
+        }
+        while (last != null) {
+            if (last.value.equals(car)) {
+                return true;
+            } else {
                 last = last.next;
             }
         }

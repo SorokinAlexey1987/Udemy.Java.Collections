@@ -1,6 +1,5 @@
-package ArrayList;
+package Collections;
 
-import LinkedList.CarLinkedList;
 import org.junit.Before;
 import org.junit.Test;
 

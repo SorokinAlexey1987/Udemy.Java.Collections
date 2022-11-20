@@ -1,7 +1,4 @@
-package LinkedList;
-
-import ArrayList.Car;
-import ArrayList.CarList;
+package Collections;
 
 public class CarLinkedList implements CarList {
 
@@ -51,14 +48,27 @@ public class CarLinkedList implements CarList {
 
     @Override
     public boolean remove(Car car) {;
+        int index = findElement(car);
+        if (index != -1) {
+            return removeAt(index);
+        }
+        return false;
+    }
+
+    @Override
+    public boolean contains(Car car) {
+        return findElement(car) != -1;
+    }
+
+    private int findElement(Car car) {
         Node node = first;
         for (int i = 0; i < size; i++) {
             if (node.value.equals(car)) {
-                return removeAt(i);
+                return i;
             }
             node = node.next;
         }
-        return false;
+        return -1;
     }
 
     @Override

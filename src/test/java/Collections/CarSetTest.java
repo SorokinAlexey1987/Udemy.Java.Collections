@@ -2,6 +2,8 @@ package Collections;
 
 import org.junit.Before;
 import org.junit.Test;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import static org.junit.Assert.*;
 
@@ -34,9 +36,9 @@ public class CarSetTest {
 
     @Test
     public void whenElementRemovedThenSizeDecreased() {
-        assertTrue(carSet.remove(new Car("Brand30", 30)));
+        assertTrue(carSet.remove(new Car("Brand 30", 30)));
         assertEquals(99, carSet.size());
-        assertFalse(carSet.remove(new Car("Brand30", 30)));
+        assertFalse(carSet.remove(new Car("Brand 30", 30)));
         assertEquals(99, carSet.size());
     }
 }

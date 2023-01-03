@@ -19,7 +19,7 @@ public class CarCollectionTest {
 
     @Test
     public void contains() {
-        assertTrue(carCollection.contains(new Car("Brand20", 20)));
-        assertFalse(carCollection.contains(new Car("Brand200", 20)));
+        assertTrue(carCollection.contains(new Car("Brand 20", 20)));
+        assertFalse(carCollection.contains(new Car("Brand 200", 20)));
     }
 }

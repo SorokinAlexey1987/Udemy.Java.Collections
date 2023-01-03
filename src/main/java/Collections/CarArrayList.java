@@ -6,6 +6,7 @@ public class CarArrayList implements CarList {
 
     private Car[] array = new Car[10];
     private int size = 0;
+
     @Override
     public Car get(int index) {
         checkIndex(index);
@@ -39,8 +40,8 @@ public class CarArrayList implements CarList {
 
     @Override
     public boolean remove(Car car) {
-        for(int i = 0; i < size; i++) {
-            if(array[i].equals(car)) {
+        for (int i = 0; i < size; i++) {
+            if (array[i].equals(car)) {
                 return removeAt(i);
             }
         }
@@ -49,8 +50,8 @@ public class CarArrayList implements CarList {
 
     @Override
     public boolean contains(Car car) {
-        for(int i = 0; i < size; i++) {
-            if(array[i].equals(car)) {
+        for (int i = 0; i < size; i++) {
+            if (array[i].equals(car)) {
                 return true;
             }
         }
@@ -65,7 +66,7 @@ public class CarArrayList implements CarList {
             array[i] = array[i + 1];
         }
         */
-        System.arraycopy(array, index + 1, array, index, size - 1- index);
+        System.arraycopy(array, index + 1, array, index, size - 1 - index);
         size--;
         return true;
     }
@@ -82,7 +83,7 @@ public class CarArrayList implements CarList {
     }
 
     private void checkIndex(int index) {
-        if(index < 0 || index >= size) {
+        if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException();
         }
     }

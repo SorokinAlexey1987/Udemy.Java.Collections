@@ -7,5 +7,5 @@ public class Main {
         System.out.println(car1.equals(car2));
         System.out.println(car1.hashCode());
         System.out.println(car2.hashCode());
-        }
+    }
 }

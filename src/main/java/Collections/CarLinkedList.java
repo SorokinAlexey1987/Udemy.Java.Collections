@@ -47,7 +47,8 @@ public class CarLinkedList implements CarList {
     }
 
     @Override
-    public boolean remove(Car car) {;
+    public boolean remove(Car car) {
+        ;
         int index = findElement(car);
         if (index != -1) {
             return removeAt(index);

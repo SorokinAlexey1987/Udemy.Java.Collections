@@ -21,8 +21,8 @@ public class CarHashMap implements CarMap {
             array[position] = entry;
             size++;
         } else {
-            while(true) {
-                if(existedElement.key.equals(key)) {
+            while (true) {
+                if (existedElement.key.equals(key)) {
                     existedElement.value = value;
                     return;
                 }
@@ -44,6 +44,7 @@ public class CarHashMap implements CarMap {
             if (existedElement.key.equals(key)) {
                 return existedElement.value;
             }
+            existedElement = existedElement.next;
         }
         return null;
     }
@@ -60,6 +61,26 @@ public class CarHashMap implements CarMap {
 
     @Override
     public boolean remove(CarOwner key) {
+        int position = getElementPosition(key, array.length);
+        Entry existedElement = array[position];
+        if (existedElement != null && existedElement.key.equals(key)) {
+            array[position] = existedElement.next;
+            size--;
+            return true;
+        } else {
+            while (existedElement != null) {
+                Entry nextElement = existedElement.next;
+                if (nextElement == null) {
+                    return false;
+                }
+                if (nextElement.key.equals(key)) {
+                    existedElement.next = nextElement.next;
+                    size--;
+                    return true;
+                }
+                existedElement = existedElement.next;
+            }
+        }
         return false;
     }
 

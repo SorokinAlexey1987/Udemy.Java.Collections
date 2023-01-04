@@ -2,7 +2,7 @@ package Collections;
 
 import java.util.Objects;
 
-public class Car implements Comparable<Car>{
+public class Car {
     private String brand;
     private int number;
 
@@ -41,7 +41,7 @@ public class Car implements Comparable<Car>{
     }
 
     @Override
-    public int compareTo(Car o) {
-        return 0;
+    public String toString() {
+        return "Car{" + "brand='" + brand + '\'' + ", number=" + number + '}';
     }
 }

@@ -79,7 +79,7 @@ public class CarHashMap implements CarMap {
                 existedElement = existedElement.next;
             }
         }
-        return null;
+        return result;
     }
 
     @Override

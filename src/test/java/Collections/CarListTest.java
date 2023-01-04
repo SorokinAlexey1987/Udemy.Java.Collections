@@ -14,7 +14,7 @@ public class CarListTest {
         carList = new CarLinkedList();
 
         for (int i = 0; i < 100; i++) {
-            carList.add(new Car("Brand " + i, i));
+            carList.add(new Car("Brand" + i, i));
         }
     }
 
@@ -59,7 +59,7 @@ public class CarListTest {
     @Test
     public void methodGetReturnedRightValue() {
         Car car = carList.get(0);
-        assertEquals("Brand 0", car.getBrand());
+        assertEquals("Brand0", car.getBrand());
     }
 
     @Test

@@ -16,7 +16,7 @@ public class CarSetTest {
     public void setUp() throws Exception {
         carSet = new CarHashSet();
         for (int i = 0; i < 100; i++) {
-            carSet.add(new Car("Brand " + i, i));
+            carSet.add(new Car("Brand" + i, i));
         }
     }
 
@@ -37,9 +37,9 @@ public class CarSetTest {
 
     @Test
     public void whenElementRemovedThenSizeDecreased() {
-        assertTrue(carSet.remove(new Car("Brand 30", 30)));
+        assertTrue(carSet.remove(new Car("Brand30", 30)));
         assertEquals(99, carSet.size());
-        assertFalse(carSet.remove(new Car("Brand 30", 30)));
+        assertFalse(carSet.remove(new Car("Brand30", 30)));
         assertEquals(99, carSet.size());
     }
 }

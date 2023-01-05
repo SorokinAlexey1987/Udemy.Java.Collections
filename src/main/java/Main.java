@@ -22,6 +22,7 @@ public class Main {
         }
          */
 
+        /*
         Set<Integer> numbers = new TreeSet<>(new Comparator<Integer>() {
             @Override
             public int compare(Integer o1, Integer o2) {
@@ -34,5 +35,16 @@ public class Main {
         for (int number : numbers) {
             System.out.println(number);
         }
+         */
+
+        HashMap<CarOwner, Car> map = new HashMap<>();
+        CarOwner key = new CarOwner(1, "Name", "LastName");
+        map.put(key, new Car("Brand1", 1));
+        key.setId(8);
+        for (CarOwner carOwner : map.keySet()) {
+            System.out.println(carOwner.getId());
+        }
+        // Car car = map.get(key);
+        // System.out.println(car.getBrand());
     }
 }

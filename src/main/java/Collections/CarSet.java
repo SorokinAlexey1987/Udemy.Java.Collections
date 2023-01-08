@@ -1,10 +1,10 @@
 package Collections;
 
-public interface CarSet extends CarCollection {
+public interface CarSet<T> extends CarCollection<T> {
 
-    boolean add(Car car);
+    boolean add(T car);
 
-    boolean remove(Car car);
+    boolean remove(T car);
 
     int size();
 
